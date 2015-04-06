@@ -7,11 +7,14 @@ php:
   - hhvm
 
 before_script:
-  - git branch
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
 
 script: phpunit
+        git branch
+        git add .
+        git checkout master
+
 
 matrix:
   allow_failures:
