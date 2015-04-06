@@ -10,10 +10,11 @@ before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
 
-script: phpunit
-        git branch
-        git add .
-        git checkout master
+script:
+  - phpunit
+  - git branch
+  - git add .
+  - git checkout master
 
 
 matrix:
