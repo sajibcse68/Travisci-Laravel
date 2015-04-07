@@ -10,6 +10,8 @@ env:
 before_script:
 - composer self-update
 - composer install --prefer-source --no-interaction --dev
+- echo ${GITHUB_TOKEN}
+- echo ${TRAVIS_REPO_SLUG}
 script:
 - phpunit
 after_success:
