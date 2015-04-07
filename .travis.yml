@@ -10,6 +10,8 @@ before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
 
+  travis encrypt -a - GITHUB_TOKEN=a745f5ad9a4f58fea088edbb155cec0f6281c995
+
 script:
   - phpunit
 
