@@ -14,9 +14,11 @@ script:
   - phpunit
 
 after_script:
+  - git remote show
   - git branch
   - git add .
   - git checkout master
+
 
 
 matrix:
