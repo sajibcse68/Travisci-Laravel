@@ -13,7 +13,7 @@ before_script:
 script:
 - phpunit
 after_success:
-- '[ "${TRAVIS_BRANCH}" = "stable" ] && git push https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master'
+- git push https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master'
 
 matrix:
   allow_failures:
