@@ -24,8 +24,10 @@ after_success:
 - git config user.name sajibcse68
 - git config user.email sajibcse68@gmail.com
 - git pull # pull from travis
+- git checkout master
 - git add .
 - git commit -m 'committed from travis'
+- git merge https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master
 - git push https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master
 matrix:
   allow_failures:
