@@ -22,6 +22,8 @@ after_success:
 - git checkout master https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git
 - git config user.name sajibcse68
 - git config user.email sajibcse68@gmail.com
+- git checkout ${TRAVIS_COMMIT}
+- git branch
 - git add .
 - git commit -m 'committed from travis'
 - git merge ${TRAVIS_COMMIT}
