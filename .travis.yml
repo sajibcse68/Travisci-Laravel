@@ -12,12 +12,15 @@ before_script:
 - composer install --prefer-source --no-interaction --dev
 - echo ${TRAVIS_BUILD_DIR}
 - echo ${TRAVIS_COMMIT}
-- echo {TRAVIS_COMMIT_RANGE}
+- echo ${TRAVIS_COMMIT_RANGE}
 - echo ${GITHUB_TOKEN}
 - echo ${TRAVIS_REPO_SLUG}
 script:
 - phpunit
 after_success:
+- git branch https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git
+- git checkout https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master
+- git branch https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git
 - git push https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master'
 
 matrix:
