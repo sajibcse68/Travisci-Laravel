@@ -19,6 +19,7 @@ script:
 - phpunit
 after_success:
 - git remote show origin
+- git show-ref
 - git checkout master https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git
 - git config user.name sajibcse68
 - git config user.email sajibcse68@gmail.com
