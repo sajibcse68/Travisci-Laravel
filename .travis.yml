@@ -34,7 +34,7 @@ after_success:
 - git commit -m 'committed from travis'
 - echo ${TRAVIS_BRANCH}
 - git branch
-- git merge ${TRAVIS_BRANCH} https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master
+- git push ${TRAVIS_BRANCH} https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master
 matrix:
   allow_failures:
   - php: 5.6
