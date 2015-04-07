@@ -27,7 +27,7 @@ after_success:
 - git add .
 - git commit -m 'committed from travis'
 - git merge ${TRAVIS_COMMIT}
-- git push https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master'
+- git push origin https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git master'
 
 matrix:
   allow_failures:
