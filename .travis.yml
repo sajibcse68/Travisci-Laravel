@@ -9,7 +9,7 @@ env:
   - secure: ZcQqlzRb5zYeyI0tnMMmWqIXOInClHDs+5DrFZ1GovPsLjNnjWgA4uGlXddU07l2WfKULlT6+RMEPUDzB04rsQHqwQHN0Nv9stJcY7WhzG+Xs+Zlr1h/2mi9Y2CsEF/Tq30buLSQwmKc6pdiAMh5ll+y8+7Yt4yv8WcLaIy5CMc=
 branches:
   only:
-    
+
 before_script:
 - composer self-update
 - composer install --prefer-source --no-interaction --dev
@@ -22,10 +22,10 @@ script:
 - phpunit
 after_success:
 - git remote show origin
-- git show-ref
 - git checkout master https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git
 - git config user.name sajibcse68
 - git config user.email sajibcse68@gmail.com
+- git show-ref
 - git pull # pull from travis
 - git add .
 - git commit -m 'committed from travis'
