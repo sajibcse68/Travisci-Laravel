@@ -23,7 +23,7 @@ after_success:
 - git checkout master https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git
 - git config user.name sajibcse68
 - git config user.email sajibcse68@gmail.com
-- git pull origin master # pull from travis
+- git pul # pull from travis
 
 
 matrix:
@@ -32,5 +32,5 @@ matrix:
   - php: hhvm
   fast_finish: true
 notifications:
-  on_success: always
+  on_success: never
   on_failure: always
