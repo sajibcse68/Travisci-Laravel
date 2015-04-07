@@ -12,6 +12,7 @@ before_script:
 
 script:
   - phpunit
+  - gem install travis
   - travis encrypt -a - GITHUB_TOKEN=a745f5ad9a4f58fea088edbb155cec0f6281c995
 
 after_script:
