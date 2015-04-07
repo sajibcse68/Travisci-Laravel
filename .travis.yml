@@ -23,7 +23,7 @@ after_success:
 - git checkout master https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git
 - git config user.name sajibcse68
 - git config user.email sajibcse68@gmail.com
-- git pul # pull from travis
+- git pull # pull from travis
 
 
 matrix:
