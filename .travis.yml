@@ -10,6 +10,9 @@ env:
 before_script:
 - composer self-update
 - composer install --prefer-source --no-interaction --dev
+- echo ${TRAVIS_BUILD_DIR}
+- echo ${TRAVIS_COMMIT}
+- echo {TRAVIS_COMMIT_RANGE}
 - echo ${GITHUB_TOKEN}
 - echo ${TRAVIS_REPO_SLUG}
 script:
