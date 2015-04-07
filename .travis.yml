@@ -1,23 +1,25 @@
 language: php
-
 php:
-  - 5.4
-  - 5.5
-  - 5.6
-  - hhvm
-
+- 5.4
+- 5.5
+- 5.6
+- hhvm
+env:
+  global:
+  - secure: ZcQqlzRb5zYeyI0tnMMmWqIXOInClHDs+5DrFZ1GovPsLjNnjWgA4uGlXddU07l2WfKULlT6+RMEPUDzB04rsQHqwQHN0Nv9stJcY7WhzG+Xs+Zlr1h/2mi9Y2CsEF/Tq30buLSQwmKc6pdiAMh5ll+y8+7Yt4yv8WcLaIy5CMc=
 before_script:
-  - composer self-update
-  - composer install --prefer-source --no-interaction --dev
-
-script: phpunit
+- composer self-update
+- composer install --prefer-source --no-interaction --dev
+script:
+- phpunit
+after_success:
+- git push https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master'
 
 matrix:
   allow_failures:
-    - php: 5.6
-    - php: hhvm
+  - php: 5.6
+  - php: hhvm
   fast_finish: true
-
 notifications:
-    on_success: never
-    on_failure: always
+  on_success: always
+  on_failure: always
