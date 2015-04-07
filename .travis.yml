@@ -25,7 +25,6 @@ after_success:
 - git config user.email sajibcse68@gmail.com
 - git pull # pull from travis
 - git push https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master
-
 matrix:
   allow_failures:
   - php: 5.6
