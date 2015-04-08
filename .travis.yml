@@ -24,8 +24,8 @@ script:
 - phpunit
 after_success:
 - git remote show origin
-- git config user.name sajibcse68
-- git config user.email sajibcse68@gmail.com
+- git config user.name sajib
+- git config user.email sajib@thetigerworks.com
 - git show-ref
 - git branch
 - git add .
