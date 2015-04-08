@@ -24,7 +24,6 @@ script:
 - phpunit
 after_success:
 - git remote show origin
-- git checkout master https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git
 - git config user.name sajibcse68
 - git config user.email sajibcse68@gmail.com
 - git show-ref
@@ -34,7 +33,6 @@ after_success:
 - git add .
 - git commit -m 'committed from travis'
 - echo ${TRAVIS_BRANCH}
-- git branch ${TRAVIS_BRANCH}
 - git branch -a
 - git log --graph
 - git push https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master
