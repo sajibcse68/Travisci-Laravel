@@ -15,7 +15,6 @@ branches:
 before_script:
 - composer self-update
 - composer install --prefer-source --no-interaction --dev
-- echo {TRAVIS_BUILD_DIR}
 - echo ${TRAVIS_BUILD_DIR}
 - echo ${TRAVIS_COMMIT}
 - echo ${TRAVIS_COMMIT_RANGE}
@@ -37,6 +36,7 @@ after_success:
 - echo ${TRAVIS_BRANCH}
 - git branch ${TRAVIS_BRANCH}
 - git branch -a
+- git log --graph
 - git push https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master
 matrix:
   allow_failures:
@@ -44,6 +44,6 @@ matrix:
   - php: hhvm
   fast_finish: true
 notifications:
-  on_success: never
+  on_success: always
   on_failure: always
 
