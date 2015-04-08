@@ -10,8 +10,6 @@ env:
 branches:
   only:
   - master
-  - travis_6
-  - ${TRAVIS_BRANCH}
   - /^deploy-.*$/
 
 before_script:
